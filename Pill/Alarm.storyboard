@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EdI-dS-mar">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--알람 리스트-->
+        <scene sceneID="T28-AQ-cFz">
+            <objects>
+                <viewController title="알람 리스트" id="EdI-dS-mar" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tph-dK-eQx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mgn-wv-txj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qRm-ux-aeA"/>
+                    <connections>
+                        <segue destination="kdi-kZ-koL" kind="show" id="7HH-Fi-yl7"/>
+                        <segue destination="pav-vy-N0A" kind="show" id="YEF-OX-8Es"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xtb-ec-jPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="761"/>
+        </scene>
+        <!--알람 추가-->
+        <scene sceneID="Qux-D0-fmN">
+            <objects>
+                <viewController title="알람 추가" id="kdi-kZ-koL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bjw-h3-aW7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="K9G-1t-ugc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dDD-UW-bkY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVM-PJ-xIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2177" y="546"/>
+        </scene>
+        <!--알람 편집-->
+        <scene sceneID="8tr-ie-AkN">
+            <objects>
+                <viewController title="알람 편집" id="pav-vy-N0A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M3x-nZ-Z7N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sSD-hc-yop"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="i5k-RR-HuR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeJ-Re-MOw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197" y="1221"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

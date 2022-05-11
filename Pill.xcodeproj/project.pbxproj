@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C644141F282B6CBB00ABFBEA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C644141E282B6CBB00ABFBEA /* Search.storyboard */; };
+		C6441421282B6CC700ABFBEA /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6441420282B6CC700ABFBEA /* Alarm.storyboard */; };
 		C67904C627F4090400EEC428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904C527F4090400EEC428 /* AppDelegate.swift */; };
 		C67904C827F4090400EEC428 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904C727F4090400EEC428 /* SceneDelegate.swift */; };
 		C67904CA27F4090400EEC428 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904C927F4090400EEC428 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C644141E282B6CBB00ABFBEA /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		C6441420282B6CC700ABFBEA /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		C67904C227F4090400EEC428 /* Pill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67904C527F4090400EEC428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C67904C727F4090400EEC428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				C67904C927F4090400EEC428 /* ViewController.swift */,
 				C67904CB27F4090400EEC428 /* Main.storyboard */,
 				C67904D127F4090500EEC428 /* Assets.xcassets */,
+				C644141E282B6CBB00ABFBEA /* Search.storyboard */,
+				C6441420282B6CC700ABFBEA /* Alarm.storyboard */,
 				C67904D327F4090500EEC428 /* LaunchScreen.storyboard */,
 				C67904D627F4090500EEC428 /* Info.plist */,
 				C67904CE27F4090400EEC428 /* Pill.xcdatamodeld */,
@@ -236,6 +242,8 @@
 			files = (
 				C67904D527F4090500EEC428 /* LaunchScreen.storyboard in Resources */,
 				C67904D227F4090500EEC428 /* Assets.xcassets in Resources */,
+				C644141F282B6CBB00ABFBEA /* Search.storyboard in Resources */,
+				C6441421282B6CC700ABFBEA /* Alarm.storyboard in Resources */,
 				C67904CD27F4090400EEC428 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
