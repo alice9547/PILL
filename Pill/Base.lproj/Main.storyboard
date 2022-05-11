@@ -39,7 +39,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="Fgs-Q8-wHF" kind="show" identifier="Search" id="Yiz-DO-bfQ"/>
+                                            <segue destination="Fgs-Q8-wHF" kind="show" id="pvU-be-3tE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-BX-CDF">
