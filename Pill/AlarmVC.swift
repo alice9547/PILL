@@ -9,13 +9,13 @@ import UIKit
 
 class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var alarmTable: UITableView!
+    @IBOutlet weak var alarmTableView: UITableView!
     var alarm: Alarm = Alarm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        alarmTable.delegate = self
-        alarmTable.dataSource = self
+        alarmTableView.delegate = self
+        alarmTableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
