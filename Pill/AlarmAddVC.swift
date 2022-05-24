@@ -61,6 +61,10 @@ class AlarmAddVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("indexPath.row is nil")
         }
     }
+    
+    @IBAction func goToList(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwindAdd", sender: self)
+    }
 
 
 }

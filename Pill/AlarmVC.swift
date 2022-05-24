@@ -38,4 +38,17 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "알람"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is AlarmEditVC {
+            let nextVC = segue.destination as? AlarmEditVC
+            nextVC?.text = "PREPARE SUCCESS"
+            
+        }
+    }
+    
+    // Unwind
+    @IBAction func unwindAdd(_ segue: UIStoryboardSegue) {}
+    @IBAction func unwindEdit(_ segue: UIStoryboardSegue) {}
+
 }
