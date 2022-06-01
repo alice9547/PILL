@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // 알람 허용
+        if #available(iOS 10.0, *) {
+            let notiCenter = UNUserNotificationCenter.current()
+            notiCenter.requestAuthorization(options: [.alert, .badge, .sound]) { didAllow, e in
+                
+            }
+        }
+        else {}
         return true
     }
 

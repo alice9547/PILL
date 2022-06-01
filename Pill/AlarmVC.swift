@@ -10,7 +10,8 @@ import UIKit
 class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var alarmTableView: UITableView!
-    var alarm: Alarm = Alarm()
+    
+    var alarmManager: AlarmManager = AlarmManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +21,19 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        alarmTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2;
+        return alarmManager.getCount();
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
-        cell.title.text = alarm.label
+        let alarm = alarmManager.getAlarm(key: indexPath.row)
+        cell.title.text = alarm.title
         cell.subtitle.text = alarm.formattedTime
         return cell
     }
@@ -42,13 +49,27 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is AlarmEditVC {
             let nextVC = segue.destination as? AlarmEditVC
-            nextVC?.text = "PREPARE SUCCESS"
-            
+            let indexPath = alarmTableView.indexPathForSelectedRow!.row
+            let alarm = alarmManager.getAlarm(key: indexPath)
+            nextVC?.text = "Label is \(alarm.title), Date is \(alarm.formattedTime)"
+
+        }
+        
+        if segue.destination is AlarmAddVC {
+            let nextVC = segue.destination as? AlarmAddVC
+            nextVC?.alarmManager = self.alarmManager
         }
     }
     
     // Unwind
-    @IBAction func unwindAdd(_ segue: UIStoryboardSegue) {}
+    @IBAction func unwindAdd(_ segue: UIStoryboardSegue) {
+        viewWillAppear(true)
+    }
     @IBAction func unwindEdit(_ segue: UIStoryboardSegue) {}
 
+    @IBAction func addButton(_ sender: Any) {
+        
+    }
+    
+    
 }
