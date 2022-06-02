@@ -3,7 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,57 +13,249 @@
         <!--알람 리스트-->
         <scene sceneID="T28-AQ-cFz">
             <objects>
-                <viewController title="알람 리스트" id="EdI-dS-mar" sceneMemberID="viewController">
+                <viewController title="알람 리스트" id="EdI-dS-mar" customClass="AlarmVC" customModule="Pill" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tph-dK-eQx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="22" sectionFooterHeight="22" id="KnQ-ke-Pin">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" id="flX-1e-j2D" userLabel="AlarmCell" customClass="AlarmTableViewCell" customModule="Pill" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="flX-1e-j2D" id="vCv-Ih-5t7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wp-bW-Bus" userLabel="title">
+                                                    <rect key="frame" x="20" y="19" width="252" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="title"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83K-df-8bd" userLabel="subtitle">
+                                                    <rect key="frame" x="280" y="19" width="114" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="subtitle"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subtitle" destination="83K-df-8bd" id="5ZN-N0-ITH"/>
+                                            <outlet property="title" destination="5Wp-bW-Bus" id="b5j-cq-Bso"/>
+                                            <segue destination="pav-vy-N0A" kind="presentation" identifier="editSegue" id="Vgf-q8-s8b"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mgn-wv-txj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qRm-ux-aeA"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="알람" id="MAm-s4-1lz" userLabel="알람">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8hs-4T-anM">
+                            <connections>
+                                <action selector="addButton:" destination="EdI-dS-mar" id="KAY-3W-Ox3"/>
+                                <segue destination="kdi-kZ-koL" kind="presentation" id="xDy-Q3-eTB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="kdi-kZ-koL" kind="show" id="7HH-Fi-yl7"/>
-                        <segue destination="pav-vy-N0A" kind="show" id="YEF-OX-8Es"/>
+                        <outlet property="alarmTableView" destination="KnQ-ke-Pin" id="77U-gv-uPg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xtb-ec-jPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="761"/>
+            <point key="canvasLocation" x="1408.6956521739132" y="760.71428571428567"/>
         </scene>
         <!--알람 추가-->
         <scene sceneID="Qux-D0-fmN">
             <objects>
-                <viewController title="알람 추가" id="kdi-kZ-koL" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bjw-h3-aW7">
+                <viewController title="알람 추가" id="kdi-kZ-koL" customClass="AlarmAddVC" customModule="Pill" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Rs-8n-MtT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="K9G-1t-ugc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="0ee-JW-aP6">
+                                <rect key="frame" x="0.0" y="79" width="414" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="242" id="sRW-AQ-olc"/>
+                                </constraints>
+                            </datePicker>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ac3-cU-V7T">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="알람 추가" id="1KI-0e-Giu">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="f8M-dD-Q8R">
+                                            <color key="tintColor" name="AccentColor"/>
+                                            <connections>
+                                                <action selector="goToList:" destination="kdi-kZ-koL" id="zVe-l6-SJI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="저장" style="done" id="5hD-EY-1Wu">
+                                            <color key="tintColor" name="AccentColor"/>
+                                            <connections>
+                                                <action selector="alarmAddSave:" destination="kdi-kZ-koL" id="ulV-b7-bGd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XsQ-8u-Vwn">
+                                <rect key="frame" x="20" y="341" width="374" height="190"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P6U-KG-b4K" userLabel="TitleView">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-eK-y16" userLabel="title">
+                                                <rect key="frame" x="0.0" y="0.0" width="324.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3a-2r-bkm" userLabel="selectedTitle">
+                                                <rect key="frame" x="332.5" y="0.0" width="41.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hqf-Bd-jhy"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b8e-My-k0h" userLabel="SoundView">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTi-VF-GX9" userLabel="sound">
+                                                <rect key="frame" x="0.0" y="0.0" width="324.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soi-bX-KUI" userLabel="selectedSound">
+                                                <rect key="frame" x="332.5" y="0.0" width="41.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6LW-WZ-Zub"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PyD-tR-e9d" userLabel="RepeatView">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soc-qC-NCG" userLabel="repeat">
+                                                <rect key="frame" x="0.0" y="0.0" width="317" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xz-jt-SVd">
+                                                <rect key="frame" x="325" y="0.0" width="51" height="50"/>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SSD-Zm-kOa"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="44S-SB-Ev3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0ee-JW-aP6" firstAttribute="leading" secondItem="44S-SB-Ev3" secondAttribute="leading" id="Aro-eq-Y18"/>
+                            <constraint firstItem="44S-SB-Ev3" firstAttribute="trailing" secondItem="XsQ-8u-Vwn" secondAttribute="trailing" constant="20" id="DnB-yb-mpA"/>
+                            <constraint firstItem="XsQ-8u-Vwn" firstAttribute="leading" secondItem="6Rs-8n-MtT" secondAttribute="leadingMargin" id="Mqq-vF-nug"/>
+                            <constraint firstItem="0ee-JW-aP6" firstAttribute="top" secondItem="6Rs-8n-MtT" secondAttribute="top" constant="79" id="WAc-z9-MPi"/>
+                            <constraint firstItem="0ee-JW-aP6" firstAttribute="centerX" secondItem="6Rs-8n-MtT" secondAttribute="centerX" id="kdc-gW-qwG"/>
+                            <constraint firstItem="XsQ-8u-Vwn" firstAttribute="top" secondItem="0ee-JW-aP6" secondAttribute="bottom" constant="20" id="rSW-Ss-vEi"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dDD-UW-bkY"/>
+                    <navigationItem key="navigationItem" title="알람 추가" id="4SS-d6-hJ0"/>
+                    <connections>
+                        <outlet property="datePicker" destination="0ee-JW-aP6" id="BK8-Wo-2Nj"/>
+                        <outlet property="repeatView" destination="PyD-tR-e9d" id="RWd-1h-p2u"/>
+                        <outlet property="soundView" destination="b8e-My-k0h" id="SoR-wV-vH3"/>
+                        <outlet property="titleView" destination="P6U-KG-b4K" id="xV0-2a-Wmk"/>
+                        <segue destination="MOa-zA-loJ" kind="unwind" identifier="unwindAdd" unwindAction="unwindAdd:" id="gzM-2O-TPx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVM-PJ-xIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MOa-zA-loJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="546"/>
+            <point key="canvasLocation" x="2105.7971014492755" y="760.71428571428567"/>
         </scene>
         <!--알람 편집-->
         <scene sceneID="8tr-ie-AkN">
             <objects>
-                <viewController title="알람 편집" id="pav-vy-N0A" sceneMemberID="viewController">
+                <viewController title="알람 편집" id="pav-vy-N0A" customClass="AlarmEditVC" customModule="Pill" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M3x-nZ-Z7N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgj-gv-jim">
+                                <rect key="frame" x="20" y="246" width="374" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afI-Xg-Mgn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="알람 편집" id="i5k-RR-HuR" userLabel="알람 편집">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="aYH-k3-r1X">
+                                            <connections>
+                                                <action selector="goToList:" destination="pav-vy-N0A" id="r35-g6-tYj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="저장" style="done" id="Kya-xx-iYz"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sSD-hc-yop"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="i5k-RR-HuR"/>
+                    <connections>
+                        <outlet property="textLabel" destination="dgj-gv-jim" id="yKj-Ub-zXA"/>
+                        <segue destination="2BE-3X-CZl" kind="unwind" identifier="unwindEdit" unwindAction="unwindEdit:" id="ROY-19-clP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeJ-Re-MOw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2BE-3X-CZl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2197" y="1221"/>
+            <point key="canvasLocation" x="2105.7971014492755" y="1487.9464285714284"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="quaternaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
