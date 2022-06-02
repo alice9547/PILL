@@ -93,9 +93,5 @@ class SearchVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         guard let jsonData = dummyData.data(using: .utf8) else {return}
         let data = try? JSONDecoder().decode(PillModel.self, from: jsonData)
         self.pillData = data ?? []
-        print(pillData)
-        
-        
-//        pillData = try! JSONDecoder().decode(PillModel.self, from: data)
     }
 }
