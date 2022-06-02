@@ -8,22 +8,28 @@
 import UIKit
 
 class ResultDetailVC: UIViewController {
+    
+    var paramPill: PillModelElement?
 
+    @IBOutlet weak var imgPill: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblEfficacy: UILabel!
+    @IBOutlet weak var lblAppearance: UILabel!
+    @IBOutlet weak var lblUses: UILabel!
+    @IBOutlet weak var lblPrecaution: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let paramPill = self.paramPill else {return}
+        
+        lblName.text = paramPill.productName
+        lblEfficacy.text = paramPill.efficacy
+        lblAppearance.text = paramPill.appearance
+        lblUses.text = paramPill.uses
+        lblPrecaution.text = paramPill.precaution
+        
+    
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

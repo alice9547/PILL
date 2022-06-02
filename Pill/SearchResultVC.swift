@@ -43,6 +43,9 @@ extension SearchResultVC: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
+     
+        guard let vc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "ResultDetailVC") as? ResultDetailVC else { return }
+        vc.paramPill = paramData[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
