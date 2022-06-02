@@ -28,6 +28,7 @@
 		C6CE7930284866A1007C9B65 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE792F284866A1007C9B65 /* DefaultsKeys.swift */; };
 		C6CE79432848BBA8007C9B65 /* PillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE79422848BBA8007C9B65 /* PillData.swift */; };
 		C6CE79482848BD43007C9B65 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE79472848BD43007C9B65 /* SearchResultCell.swift */; };
+		C6CE794A2848D284007C9B65 /* dummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE79492848D284007C9B65 /* dummyData.swift */; };
 		EF19CFD293D35374712FB7ED /* Pods_Pill_PillUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F7DD74F82B76849595F98A /* Pods_Pill_PillUITests.framework */; };
 		F81376B4D96EDCFBFD51662A /* Pods_Pill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C174D95B691C90E678D06008 /* Pods_Pill.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		C6CE792F284866A1007C9B65 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		C6CE79422848BBA8007C9B65 /* PillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillData.swift; sourceTree = "<group>"; };
 		C6CE79472848BD43007C9B65 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		C6CE79492848D284007C9B65 /* dummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummyData.swift; sourceTree = "<group>"; };
 		E12AAF47C6D7F59E143310E0 /* Pods-PillTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillTests.debug.xcconfig"; path = "Target Support Files/Pods-PillTests/Pods-PillTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,7 +125,6 @@
 				E12AAF47C6D7F59E143310E0 /* Pods-PillTests.debug.xcconfig */,
 				1BC43222D53A5B09A41721A1 /* Pods-PillTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -251,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CE79422848BBA8007C9B65 /* PillData.swift */,
+				C6CE79492848D284007C9B65 /* dummyData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -516,6 +518,7 @@
 				C67904D027F4090400EEC428 /* Pill.xcdatamodeld in Sources */,
 				C67904C827F4090400EEC428 /* SceneDelegate.swift in Sources */,
 				C6A3C91F28476458000EC852 /* UIButtonExtension.swift in Sources */,
+				C6CE794A2848D284007C9B65 /* dummyData.swift in Sources */,
 				C6CE79482848BD43007C9B65 /* SearchResultCell.swift in Sources */,
 				C639C2BE282BA31D00CF4CDD /* SearchVC.swift in Sources */,
 			);
