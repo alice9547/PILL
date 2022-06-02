@@ -25,6 +25,8 @@
 		C67904EC27F4090500EEC428 /* PillUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904EB27F4090500EEC428 /* PillUITestsLaunchTests.swift */; };
 		C6A3C91F28476458000EC852 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3C91E28476458000EC852 /* UIButtonExtension.swift */; };
 		C6CE7930284866A1007C9B65 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE792F284866A1007C9B65 /* DefaultsKeys.swift */; };
+		C6CE79432848BBA8007C9B65 /* PillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE79422848BBA8007C9B65 /* PillData.swift */; };
+		C6CE79482848BD43007C9B65 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE79472848BD43007C9B65 /* SearchResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		C67904EB27F4090500EEC428 /* PillUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C6A3C91E28476458000EC852 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		C6CE792F284866A1007C9B65 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		C6CE79422848BBA8007C9B65 /* PillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillData.swift; sourceTree = "<group>"; };
+		C6CE79472848BD43007C9B65 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 			children = (
 				C639C2BD282BA31D00CF4CDD /* SearchVC.swift */,
 				C639C2BB282BA30A00CF4CDD /* SearchResultVC.swift */,
+				C6CE79472848BD43007C9B65 /* SearchResultCell.swift */,
 				C639C2BF282BA33200CF4CDD /* ResultDetailVC.swift */,
 			);
 			name = Search;
@@ -172,6 +177,7 @@
 			children = (
 				C639C2B8282BA2B100CF4CDD /* Extension */,
 				C639C2B2282BA22000CF4CDD /* App */,
+				C6CE79442848BBAC007C9B65 /* Data */,
 				C639C2B3282BA25200CF4CDD /* Views */,
 				C6A3C91D28476400000EC852 /* Custom */,
 				C67904D127F4090500EEC428 /* Assets.xcassets */,
@@ -208,6 +214,14 @@
 				C6A3C91E28476458000EC852 /* UIButtonExtension.swift */,
 			);
 			name = Custom;
+			sourceTree = "<group>";
+		};
+		C6CE79442848BBAC007C9B65 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C6CE79422848BBA8007C9B65 /* PillData.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CE79432848BBA8007C9B65 /* PillData.swift in Sources */,
 				C639C2BC282BA30A00CF4CDD /* SearchResultVC.swift in Sources */,
 				C6441425282B9A4E00ABFBEA /* DesignExtension.swift in Sources */,
 				C639C2C0282BA33200CF4CDD /* ResultDetailVC.swift in Sources */,
@@ -352,6 +367,7 @@
 				C67904D027F4090400EEC428 /* Pill.xcdatamodeld in Sources */,
 				C67904C827F4090400EEC428 /* SceneDelegate.swift in Sources */,
 				C6A3C91F28476458000EC852 /* UIButtonExtension.swift in Sources */,
+				C6CE79482848BD43007C9B65 /* SearchResultCell.swift in Sources */,
 				C639C2BE282BA31D00CF4CDD /* SearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
