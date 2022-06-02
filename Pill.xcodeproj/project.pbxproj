@@ -24,6 +24,7 @@
 		C67904EA27F4090500EEC428 /* PillUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904E927F4090500EEC428 /* PillUITests.swift */; };
 		C67904EC27F4090500EEC428 /* PillUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904EB27F4090500EEC428 /* PillUITestsLaunchTests.swift */; };
 		C6A3C91F28476458000EC852 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3C91E28476458000EC852 /* UIButtonExtension.swift */; };
+		C6CE7930284866A1007C9B65 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE792F284866A1007C9B65 /* DefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C67904E927F4090500EEC428 /* PillUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillUITests.swift; sourceTree = "<group>"; };
 		C67904EB27F4090500EEC428 /* PillUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C6A3C91E28476458000EC852 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		C6CE792F284866A1007C9B65 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				C67904C527F4090400EEC428 /* AppDelegate.swift */,
 				C67904C727F4090400EEC428 /* SceneDelegate.swift */,
+				C6CE792F284866A1007C9B65 /* DefaultsKeys.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				C639C2C0282BA33200CF4CDD /* ResultDetailVC.swift in Sources */,
 				C67904CA27F4090400EEC428 /* MainVC.swift in Sources */,
 				C67904C627F4090400EEC428 /* AppDelegate.swift in Sources */,
+				C6CE7930284866A1007C9B65 /* DefaultsKeys.swift in Sources */,
 				C67904D027F4090400EEC428 /* Pill.xcdatamodeld in Sources */,
 				C67904C827F4090400EEC428 /* SceneDelegate.swift in Sources */,
 				C6A3C91F28476458000EC852 /* UIButtonExtension.swift in Sources */,
