@@ -8,14 +8,20 @@
 import UIKit
 
 class SearchVC: UIViewController {
-
+    @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var tfSymptom: UITextField!
+    @IBOutlet weak var btnSearch: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        btnSearch.setNextBtnColor(enabled: true)
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnSerch(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

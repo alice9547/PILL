@@ -23,6 +23,7 @@
 		C67904E027F4090500EEC428 /* PillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904DF27F4090500EEC428 /* PillTests.swift */; };
 		C67904EA27F4090500EEC428 /* PillUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904E927F4090500EEC428 /* PillUITests.swift */; };
 		C67904EC27F4090500EEC428 /* PillUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67904EB27F4090500EEC428 /* PillUITestsLaunchTests.swift */; };
+		C6A3C91F28476458000EC852 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3C91E28476458000EC852 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C67904E527F4090500EEC428 /* PillUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PillUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67904E927F4090500EEC428 /* PillUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillUITests.swift; sourceTree = "<group>"; };
 		C67904EB27F4090500EEC428 /* PillUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C6A3C91E28476458000EC852 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				C639C2B8282BA2B100CF4CDD /* Extension */,
 				C639C2B2282BA22000CF4CDD /* App */,
 				C639C2B3282BA25200CF4CDD /* Views */,
+				C6A3C91D28476400000EC852 /* Custom */,
 				C67904D127F4090500EEC428 /* Assets.xcassets */,
 				C67904CB27F4090400EEC428 /* Main.storyboard */,
 				C644141E282B6CBB00ABFBEA /* Search.storyboard */,
@@ -194,6 +197,14 @@
 				C67904EB27F4090500EEC428 /* PillUITestsLaunchTests.swift */,
 			);
 			path = PillUITests;
+			sourceTree = "<group>";
+		};
+		C6A3C91D28476400000EC852 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				C6A3C91E28476458000EC852 /* UIButtonExtension.swift */,
+			);
+			name = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				C67904C627F4090400EEC428 /* AppDelegate.swift in Sources */,
 				C67904D027F4090400EEC428 /* Pill.xcdatamodeld in Sources */,
 				C67904C827F4090400EEC428 /* SceneDelegate.swift in Sources */,
+				C6A3C91F28476458000EC852 /* UIButtonExtension.swift in Sources */,
 				C639C2BE282BA31D00CF4CDD /* SearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

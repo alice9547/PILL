@@ -73,6 +73,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="검색">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnSerch:" destination="5bC-ut-kcl" eventType="touchUpInside" id="B2E-71-2HB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,6 +103,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="oNm-AX-yz5"/>
                     <connections>
+                        <outlet property="btnSearch" destination="i3q-aq-YOb" id="42q-xf-lYd"/>
+                        <outlet property="tfName" destination="ltA-LL-8Ou" id="VNA-OF-iJU"/>
+                        <outlet property="tfSymptom" destination="Adr-n0-cbC" id="3KP-db-0S6"/>
                         <segue destination="Wfd-Wx-lBJ" kind="show" id="hGY-Bf-aw4"/>
                     </connections>
                 </viewController>
@@ -110,9 +116,9 @@
         <!--검색 결과-->
         <scene sceneID="9YU-gN-yRU">
             <objects>
-                <viewController storyboardIdentifier="SearchResultVC" title="검색 결과" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wfd-Wx-lBJ" customClass="SearchResultVC" customModule="Pill" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchResultVC" title="검색 결과" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wfd-Wx-lBJ" customClass="SearchResultVC" customModule="Pill" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Sx-Th-CHo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QF0-Ok-rD3">
@@ -147,7 +153,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VqE-qf-cEt">
-                                <rect key="frame" x="0.0" y="124" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="139" id="XLp-23-b1R">
