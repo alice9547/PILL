@@ -8,6 +8,9 @@
 import UIKit
 
 class SearchVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var pillData: PillModel = []
+    
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var tfEfficacy: UITextField!
     @IBOutlet weak var preview: UIImageView!
@@ -18,6 +21,11 @@ class SearchVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         btnSearch.setNextBtnColor(enabled: true)
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? SearchResultVC else {return}
+        vc.paramData = pillData
     }
     
     @IBAction func pick(_ sender: Any) {
@@ -45,6 +53,12 @@ class SearchVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
     }
     
+    @IBAction func btnSearch(_ sender: Any) {
+        callApi()
+        self.performSegue(withIdentifier: "ShowResult", sender: nil)
+    }
+    
+    
     func setAction(type:UIImagePickerController.SourceType){
         let picker = UIImagePickerController()
         
@@ -58,5 +72,29 @@ class SearchVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         self.preview.image = info[.editedImage] as? UIImage
         
         picker.dismiss(animated: false)
+    }
+    
+    private func callApi(){
+//        let url = ""
+//        var request = URLRequest(url: URL(string: url)!)
+//        request.httpMethod = HTTPMethod.post.rawValue
+//        request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
+//        AF.request(request).responseDecodable(of:PillModel.self) { (json) in
+//
+//            switch json.result {
+//                case .success(let response):
+        //  pillData에 저장
+//
+//                case .failure(let error):
+//                print(error)
+//            }
+//        }
+        
+        
+        if let data = try? JSONDecoder().decode(PillModel.self, from: jsonData){
+            self.pillData = data
+        }
+        
+//        pillData = try! JSONDecoder().decode(PillModel.self, from: jsonData)
     }
 }

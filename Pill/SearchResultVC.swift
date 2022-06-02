@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchResultVC: UIViewController {
     
-    var pillData: [PillModel] = []
+    var paramData: PillModel = []
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,16 +18,14 @@ class SearchResultVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    private func callApi(){
         
+        print(paramData)
     }
-    
 }
+
 extension SearchResultVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return paramData.count
         }
         
         // 특정 row에 표시할 cell 리턴
@@ -34,9 +33,10 @@ extension SearchResultVC: UITableViewDelegate,UITableViewDataSource{
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as? SearchResultCell else { return UITableViewCell() }
         
-//        let row = self.pickPortfolioGroupList[indexPath.row]
-//        cell.lblName.text = row
-//        cell.lblManufacturer.text = row
+        let row = self.paramData[indexPath.row]
+        cell.lblName.text = row.productName
+        cell.lblManufacturer.text = row.manufacturer
+        cell.imgPill.image = UIImage(named: row.image ?? "")
         
         // 생성한 Cell 리턴
         return cell
