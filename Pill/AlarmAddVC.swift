@@ -24,6 +24,12 @@ class AlarmAddVC: UIViewController {
         soundView.layer.cornerRadius = 10
         repeatView.layer.cornerRadius = 10
         
+        let titleViewTaps = UITapGestureRecognizer(target: self, action: #selector(self.titleTapGesture(_:)))
+        self.titleView.addGestureRecognizer(titleViewTaps)
+        
+        let soundViewTaps = UITapGestureRecognizer(target: self, action: #selector(self.soundTapGesture(_:)))
+        self.soundView.addGestureRecognizer(soundViewTaps)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +44,7 @@ class AlarmAddVC: UIViewController {
     @IBAction func alarmAddSave(_ sender: Any) {
         var tempAlarm = Alarm()
         tempAlarm.date = datePicker.date
-        tempAlarm.title = "Nice"
+        tempAlarm.title = "알람"
         
         alarmManager.addAlarm(alarm: tempAlarm)
         alarmManager.sortAlarms()
@@ -51,6 +57,13 @@ class AlarmAddVC: UIViewController {
             let nextVC = segue.destination as? AlarmVC
             nextVC?.alarmManager = alarmManager
         }
+    }
+    @objc func titleTapGesture(_ gesture: UITapGestureRecognizer) {
+        print("Hello1")
+    }
+    
+    @objc func soundTapGesture(_ gesture: UITapGestureRecognizer) {
+        print("Hellow2")
     }
 
 }

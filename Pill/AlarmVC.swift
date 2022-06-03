@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -51,7 +52,9 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let nextVC = segue.destination as? AlarmEditVC
             let indexPath = alarmTableView.indexPathForSelectedRow!.row
             let alarm = alarmManager.getAlarm(key: indexPath)
-            nextVC?.text = "Label is \(alarm.title), Date is \(alarm.formattedTime)"
+//            nextVC?.datePicker.date = alarm.date
+//            nextVC?.textLabel.text = alarm.title
+//            nextVC?.soundLabel.text = alarm.sound
 
         }
         
