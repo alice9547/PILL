@@ -13,7 +13,7 @@ import MediaPlayer
 struct Alarm: Codable {
     var title: String = "Alarm"
     var date: Date = Date()
-    var enabled: Bool = false
+    var enabled: Bool = true
     var sound: String = "bell"
     var repeatOn: Bool = false
     
@@ -24,7 +24,6 @@ struct Alarm: Codable {
         self.date = date
         self.enabled = enabled
         self.sound = mediaLabel
-        self.repeatOn = repeatOn
     }
     static var propertyCount: Int = 5
 }
@@ -32,7 +31,7 @@ struct Alarm: Codable {
 extension Alarm {
     var formattedTime: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.dateFormat = "a h:mm"
         return dateFormatter.string(from: self.date)
     }
 }

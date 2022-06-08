@@ -7,28 +7,30 @@
 
 import Foundation
 import UIKit
+import DropDown
 
 class AlarmAddVC: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var titleView: UIStackView!
     @IBOutlet weak var soundView: UIStackView!
-    @IBOutlet weak var repeatView: UIStackView!
+    
+    @IBOutlet weak var tfTitle: UITextField!
+    @IBOutlet weak var btnSound: UIButton!
+    
     
     var alarmManager = AlarmManager()
-    var cellItems = ["이름", "사운드", "다시 알림"]
+    let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         titleView.layer.cornerRadius = 10
         soundView.layer.cornerRadius = 10
-        repeatView.layer.cornerRadius = 10
         
-        let titleViewTaps = UITapGestureRecognizer(target: self, action: #selector(self.titleTapGesture(_:)))
-        self.titleView.addGestureRecognizer(titleViewTaps)
         
-        let soundViewTaps = UITapGestureRecognizer(target: self, action: #selector(self.soundTapGesture(_:)))
-        self.soundView.addGestureRecognizer(soundViewTaps)
+        tfTitle.placeholder = "알람"
+        tfTitle.text = "알람"
         
     }
     
@@ -41,10 +43,11 @@ class AlarmAddVC: UIViewController {
     }
 
     // 저장 버튼 클릭 시 호출되는 함수.
-    @IBAction func alarmAddSave(_ sender: Any) {
+    @IBAction func alarmSave(_ sender: Any) {
         var tempAlarm = Alarm()
         tempAlarm.date = datePicker.date
-        tempAlarm.title = "알람"
+        tempAlarm.title = tfTitle.text ?? "알람"
+        tempAlarm.sound = btnSound.titleLabel?.text ?? "Bell"
         
         alarmManager.addAlarm(alarm: tempAlarm)
         alarmManager.sortAlarms()
@@ -52,18 +55,14 @@ class AlarmAddVC: UIViewController {
         self.performSegue(withIdentifier: "unwindAdd", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is AlarmVC {
-            let nextVC = segue.destination as? AlarmVC
-            nextVC?.alarmManager = alarmManager
+    @IBAction func dropDown(_ sender: UIButton) {
+        dropDown.dataSource = ["Bell", "Cow"]
+        dropDown.anchorView = sender //5
+        dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
+        dropDown.show() //7
+        dropDown.selectionAction = { [weak self] (index: Int, item: String) in //8
+          guard let _ = self else { return }
+          sender.setTitle(item, for: .normal) //9
         }
     }
-    @objc func titleTapGesture(_ gesture: UITapGestureRecognizer) {
-        print("Hello1")
-    }
-    
-    @objc func soundTapGesture(_ gesture: UITapGestureRecognizer) {
-        print("Hellow2")
-    }
-
 }
