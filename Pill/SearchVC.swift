@@ -83,7 +83,6 @@ class SearchVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
 //
 //            switch json.result {
 //                case .success(let response):
-        //  pillData에 저장
 //
 //                case .failure(let error):
 //                print(error)
