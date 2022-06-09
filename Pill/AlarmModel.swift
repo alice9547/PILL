@@ -10,11 +10,11 @@
 import Foundation
 import MediaPlayer
 
-struct Alarm {
+struct Alarm: Codable {
     var title: String = "Alarm"
     var date: Date = Date()
-    var enabled: Bool = false
-    var mediaLabel: String = "bell"
+    var enabled: Bool = true
+    var sound: String = "bell"
     var repeatOn: Bool = false
     
     init(){}
@@ -23,25 +23,15 @@ struct Alarm {
         self.title = label
         self.date = date
         self.enabled = enabled
-        self.mediaLabel = mediaLabel
-        self.repeatOn = repeatOn
+        self.sound = mediaLabel
     }
-    
-//    init(_ dict: PropertyReflectable.RepresentationType){
-//        title = dict["label"] as! String
-//        date = dict["date"] as! Date
-//        enabled = dict["enabled"] as! Bool
-//        mediaLabel = dict["mediaLabel"] as! String
-//        repeatOn = dict["repeatOn"] as! Bool
-//    }
-    
     static var propertyCount: Int = 5
 }
 
 extension Alarm {
     var formattedTime: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.dateFormat = "a h:mm"
         return dateFormatter.string(from: self.date)
     }
 }

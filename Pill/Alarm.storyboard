@@ -35,15 +35,15 @@
                                                     <rect key="frame" x="20" y="19" width="252" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="title"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83K-df-8bd" userLabel="subtitle">
-                                                    <rect key="frame" x="280" y="19" width="114" height="21"/>
+                                                    <rect key="frame" x="280" y="24" width="114" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="subtitle"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -107,73 +107,61 @@
                                         <barButtonItem key="rightBarButtonItem" title="저장" style="done" id="5hD-EY-1Wu">
                                             <color key="tintColor" name="AccentColor"/>
                                             <connections>
-                                                <action selector="alarmAddSave:" destination="kdi-kZ-koL" id="ulV-b7-bGd"/>
+                                                <action selector="alarmSave:" destination="kdi-kZ-koL" id="FjN-Dd-5Ew"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XsQ-8u-Vwn">
-                                <rect key="frame" x="20" y="341" width="374" height="190"/>
+                                <rect key="frame" x="20" y="341" width="374" height="104"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P6U-KG-b4K" userLabel="TitleView">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-eK-y16" userLabel="title">
-                                                <rect key="frame" x="0.0" y="0.0" width="324.5" height="50"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-eK-y16" userLabel="title">
+                                                <rect key="frame" x="0.0" y="0.0" width="266" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3a-2r-bkm" userLabel="selectedTitle">
-                                                <rect key="frame" x="332.5" y="0.0" width="41.5" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRU-ar-X3F">
+                                                <rect key="frame" x="274" y="0.0" width="100" height="34"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="PzS-3q-mtr" userLabel="width = 150"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="hqf-Bd-jhy"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b8e-My-k0h" userLabel="SoundView">
-                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="54" width="374" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTi-VF-GX9" userLabel="sound">
-                                                <rect key="frame" x="0.0" y="0.0" width="324.5" height="50"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="사운드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTi-VF-GX9" userLabel="sound">
+                                                <rect key="frame" x="0.0" y="0.0" width="266" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soi-bX-KUI" userLabel="selectedSound">
-                                                <rect key="frame" x="332.5" y="0.0" width="41.5" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28q-89-iTV">
+                                                <rect key="frame" x="274" y="0.0" width="100" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="RCo-fQ-iJz"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="linkColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Bell"/>
+                                                <connections>
+                                                    <action selector="dropDown:" destination="kdi-kZ-koL" eventType="touchUpInside" id="FFN-EX-Y8V"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6LW-WZ-Zub"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PyD-tR-e9d" userLabel="RepeatView">
-                                        <rect key="frame" x="0.0" y="140" width="374" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soc-qC-NCG" userLabel="repeat">
-                                                <rect key="frame" x="0.0" y="0.0" width="317" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xz-jt-SVd">
-                                                <rect key="frame" x="325" y="0.0" width="51" height="50"/>
-                                            </switch>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="SSD-Zm-kOa"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -193,10 +181,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="알람 추가" id="4SS-d6-hJ0"/>
                     <connections>
+                        <outlet property="btnSound" destination="28q-89-iTV" id="poJ-lH-Scv"/>
                         <outlet property="datePicker" destination="0ee-JW-aP6" id="BK8-Wo-2Nj"/>
-                        <outlet property="repeatView" destination="PyD-tR-e9d" id="RWd-1h-p2u"/>
                         <outlet property="soundView" destination="b8e-My-k0h" id="SoR-wV-vH3"/>
-                        <outlet property="titleView" destination="P6U-KG-b4K" id="xV0-2a-Wmk"/>
+                        <outlet property="tfTitle" destination="sRU-ar-X3F" id="QE6-wW-Y2F"/>
+                        <outlet property="titleView" destination="P6U-KG-b4K" id="QlD-vt-LTD"/>
                         <segue destination="MOa-zA-loJ" kind="unwind" identifier="unwindAdd" unwindAction="unwindAdd:" id="gzM-2O-TPx"/>
                     </connections>
                 </viewController>
@@ -213,16 +202,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgj-gv-jim">
-                                <rect key="frame" x="20" y="246" width="374" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afI-Xg-Mgn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afI-Xg-Mgn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kSA-cV-bWs"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="알람 편집" id="i5k-RR-HuR" userLabel="알람 편집">
                                         <barButtonItem key="leftBarButtonItem" title="취소" id="aYH-k3-r1X">
@@ -230,16 +214,103 @@
                                                 <action selector="goToList:" destination="pav-vy-N0A" id="r35-g6-tYj"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="저장" style="done" id="Kya-xx-iYz"/>
+                                        <barButtonItem key="rightBarButtonItem" title="저장" style="done" id="Kya-xx-iYz">
+                                            <connections>
+                                                <action selector="editAlarm:" destination="pav-vy-N0A" id="tYa-xs-w3o"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-Qk-lPo">
+                                <rect key="frame" x="20" y="429" width="374" height="171"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Kw-Gi-1mA" userLabel="TitleView">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HH3-EL-lMT" userLabel="title">
+                                                <rect key="frame" x="0.0" y="0.0" width="266" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gsp-Dh-Qup">
+                                                <rect key="frame" x="274" y="0.0" width="100" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="v0p-Kf-Ajc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="EbY-7Z-tYT"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jwp-RR-nAG" userLabel="SoundView">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="사운드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wci-oF-tHX" userLabel="sound">
+                                                <rect key="frame" x="0.0" y="0.0" width="266" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5M-ZM-0GM">
+                                                <rect key="frame" x="274" y="0.0" width="100" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="4mY-fm-JoC"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="dropDown:" destination="pav-vy-N0A" eventType="touchUpInside" id="xqs-4R-OgB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="xh5-jB-0nT"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j00-eY-nfU">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                                        <connections>
+                                            <action selector="btnDelete:" destination="pav-vy-N0A" eventType="touchUpInside" id="Eze-4E-pza"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="HZk-Jb-Fgz">
+                                <rect key="frame" x="0.0" y="167" width="414" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="242" id="TLQ-Cx-xpx"/>
+                                </constraints>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sSD-hc-yop"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HZk-Jb-Fgz" firstAttribute="top" secondItem="afI-Xg-Mgn" secondAttribute="bottom" constant="79" id="DGB-vZ-9ZP" userLabel="Date Picker.top = Navigation Bar.bottom + 30"/>
+                            <constraint firstItem="F5F-Qk-lPo" firstAttribute="leading" secondItem="sSD-hc-yop" secondAttribute="leading" constant="20" id="bvf-4E-1Ml" userLabel="Stack View.leading = leadingMargin"/>
+                            <constraint firstItem="HZk-Jb-Fgz" firstAttribute="leading" secondItem="afI-Xg-Mgn" secondAttribute="leading" id="eEn-YJ-F8U" userLabel="Date Picker.centerX = centerX"/>
+                            <constraint firstItem="HZk-Jb-Fgz" firstAttribute="leading" secondItem="sSD-hc-yop" secondAttribute="leading" id="eny-id-AjQ"/>
+                            <constraint firstItem="F5F-Qk-lPo" firstAttribute="top" secondItem="HZk-Jb-Fgz" secondAttribute="bottom" constant="20" id="haa-bn-4JK"/>
+                            <constraint firstItem="afI-Xg-Mgn" firstAttribute="top" secondItem="sSD-hc-yop" secondAttribute="top" id="nno-ER-RM2"/>
+                            <constraint firstItem="afI-Xg-Mgn" firstAttribute="trailing" secondItem="HZk-Jb-Fgz" secondAttribute="trailing" id="uK5-12-jYx"/>
+                            <constraint firstItem="sSD-hc-yop" firstAttribute="trailing" secondItem="F5F-Qk-lPo" secondAttribute="trailing" constant="20" id="y2Y-mN-ReN"/>
+                            <constraint firstItem="sSD-hc-yop" firstAttribute="trailing" secondItem="HZk-Jb-Fgz" secondAttribute="trailing" id="yYn-Ef-qMr"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="textLabel" destination="dgj-gv-jim" id="yKj-Ub-zXA"/>
+                        <outlet property="btnSound" destination="S5M-ZM-0GM" id="kZU-dT-Fhu"/>
+                        <outlet property="datePicker" destination="HZk-Jb-Fgz" id="86M-fM-DBh"/>
+                        <outlet property="soundView" destination="Wci-oF-tHX" id="cM7-xc-SGp"/>
+                        <outlet property="tfTitle" destination="gsp-Dh-Qup" id="oPY-KD-z0p"/>
+                        <outlet property="titleView" destination="HH3-EL-lMT" id="hFG-rA-qzm"/>
                         <segue destination="2BE-3X-CZl" kind="unwind" identifier="unwindEdit" unwindAction="unwindEdit:" id="ROY-19-clP"/>
                     </connections>
                 </viewController>
@@ -253,6 +324,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="quaternaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

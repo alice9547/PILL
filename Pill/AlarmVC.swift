@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -33,8 +34,8 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
         let alarm = alarmManager.getAlarm(key: indexPath.row)
-        cell.title.text = alarm.title
-        cell.subtitle.text = alarm.formattedTime
+        cell.title.text = alarm.formattedTime
+        cell.subtitle.text = alarm.title
         return cell
     }
     
@@ -50,8 +51,8 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if segue.destination is AlarmEditVC {
             let nextVC = segue.destination as? AlarmEditVC
             let indexPath = alarmTableView.indexPathForSelectedRow!.row
-            let alarm = alarmManager.getAlarm(key: indexPath)
-            nextVC?.text = "Label is \(alarm.title), Date is \(alarm.formattedTime)"
+            nextVC?.alarmManager = alarmManager
+            nextVC?.indexPath = indexPath
 
         }
         
@@ -61,11 +62,27 @@ class AlarmVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
+    //테이블 뷰 삭제
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            alarmManager.alarms.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        } else if editingStyle == .insert {
+            
+        }
+    }
+    
     // Unwind
     @IBAction func unwindAdd(_ segue: UIStoryboardSegue) {
         viewWillAppear(true)
     }
-    @IBAction func unwindEdit(_ segue: UIStoryboardSegue) {}
+    @IBAction func unwindEdit(_ segue: UIStoryboardSegue) {
+        viewWillAppear(true)
+    }
 
     @IBAction func addButton(_ sender: Any) {
         
