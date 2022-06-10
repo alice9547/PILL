@@ -7,8 +7,9 @@ target 'Pill' do
 
   # Pods for Pill
 
-	pod 'Alamofire', '~> 5.5'
- pod 'SwiftyUserDefaults', '~> 5.0'
+pod 'Alamofire', '~> 5.5'
+pod 'SwiftyUserDefaults', '~> 5.0'
+pod 'DropDown'
 
   target 'PillTests' do
     inherit! :search_paths
